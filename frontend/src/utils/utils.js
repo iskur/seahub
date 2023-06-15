@@ -1542,6 +1542,11 @@ export const Utils = {
   generateHistoryURL: function(siteRoot, repoID, path) {
     if (!siteRoot || !repoID || !path) return '';
     return siteRoot + 'repo/file_revisions/' + repoID + '/?p=' + this.encodePath(path);
-  }
+  },
+
+  isFunction: function(functionToCheck) {
+    const getType = {};
+    return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+  },
 
 };
